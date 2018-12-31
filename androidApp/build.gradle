@@ -26,6 +26,8 @@ android {
     }
 }
 
+check.dependsOn ktlint
+
 dependencies {
     implementation project(':core-multiplatform')
 

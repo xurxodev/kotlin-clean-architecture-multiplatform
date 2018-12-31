@@ -68,3 +68,6 @@ task packForXCode(type: Sync) {
 
     tasks.build.dependsOn packForXCode
 }
+
+
+check.dependsOn ktlint

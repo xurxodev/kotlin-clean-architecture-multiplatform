@@ -37,7 +37,7 @@ One can also compile the application and run tests from the command line:
 ## License
 
 
-    Copyright 2017 Jorge Sánchez Fernández
+    Copyright 2019 Jorge Sánchez Fernández
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
