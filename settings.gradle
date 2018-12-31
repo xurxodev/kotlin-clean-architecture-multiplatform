@@ -1,0 +1,1 @@
+include ':androidApp', ':core-multiplatform', ':mylibrary'
