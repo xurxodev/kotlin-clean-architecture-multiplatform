@@ -16,7 +16,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()        
         
-        helloLabel.text = Hello().multiplatformHello()
+        let now = DateTime()
+        
+        helloLabel.text = "The time is: \(now.timestamp)"
+    
     }
 
     
