@@ -7,6 +7,22 @@ This example shows how to create a Android app and iOS app using Kotlin multipla
 This sample based on the [multiplatform documentation](http://kotlinlang.org/docs/reference/multiplatform.html).
 If you have questions about the structure or how it works take a look at the documentation there.
 
+This example use the code analysis tool ktlint.
+
+Please configure Android Studio according to instructions in [ktlint readme](https://github.com/shyiko/ktlint).
+
+To execute code analysis as a submodule
+
+```shell
+./gradlew ktlint 
+```
+
+To execute code format
+
+```shell
+./gradlew ktlintformat
+```
+
 ## iOS
 
 To compile the project from Xcode just open `iosApp/iosApp.xcodeproj` and run the application.
