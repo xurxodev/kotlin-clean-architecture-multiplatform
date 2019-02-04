@@ -1,0 +1,33 @@
+matrix:
+  include:
+
+    - language: android
+      android:
+        components:
+          - tools
+          - platform-tools
+          - build-tools-28.0.3
+          - android-28
+          - extra-android-support
+          - extra-google-m2repository
+          - extra-android-m2repository
+
+      script:
+        - ./gradlew ktlint connectedcheck
+
+    - language: objective-c
+      osx_image: xcode8
+
+      before_install:
+        - pod repo update --silent
+        - gem install xcpretty
+
+      install:
+        - pod install
+
+      script:
+        - swiftlint
+        - set -o pipefail && xcodebuild -workspace KataSuperHeroes.xcworkspace -scheme 'KataSuperHeroes' -destination 'platform=iOS Simulator,name=iPhone 6s Plus' build test CODE_SIGN_IDENTITY=- | xcpretty -c
+
+
+
