@@ -1,7 +1,6 @@
 package com.xurxodev.multiplatformexample.core.common
 
-
-data class DateTime (
+data class DateTime(
     val timestamp: Long
 ) : Comparable<DateTime> {
     constructor() : this(currentMillis())
@@ -10,5 +9,3 @@ data class DateTime (
 }
 
 internal expect fun currentMillis(): Long
-
-
