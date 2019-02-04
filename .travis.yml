@@ -19,6 +19,7 @@ matrix:
       osx_image: xcode8
 
       before_install:
+        - cd iosApp
         - pod repo update --silent
         - gem install xcpretty
 
