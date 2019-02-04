@@ -12,16 +12,11 @@ import core_multiplatform
 class ViewController: UIViewController {
 
     @IBOutlet weak var helloLabel: UILabel!
-    
     override func viewDidLoad() {
-        super.viewDidLoad()        
-        
+        super.viewDidLoad()
         let now = DateTime()
-        
         helloLabel.text = "The time is: \(now.timestamp)"
-    
     }
 
-    
 }
 
