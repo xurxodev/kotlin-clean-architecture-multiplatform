@@ -20,6 +20,7 @@ matrix:
 
       before_install:
         - cd iosApp
+        - gem install cocoapods
         - pod repo update --silent
         - gem install xcpretty
 
