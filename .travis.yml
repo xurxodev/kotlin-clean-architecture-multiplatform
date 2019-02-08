@@ -19,12 +19,13 @@ matrix:
       osx_image: xcode10.1
 
       before_install:
-        - cd iosApp
+        - ./gradlew :core-multiplatform:packForXCode
         - gem install cocoapods
         - pod repo update --silent
         - gem install xcpretty
 
       install:
+        - cd iosApp
         - pod install
 
       script:
