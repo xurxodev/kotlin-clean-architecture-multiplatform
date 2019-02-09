@@ -5,5 +5,5 @@ jdk:
         - oraclejdk8
 
 script:
-       - ./gradlew :core-multiplatform:packForXCode
+       - ./gradlew :core-multiplatform:build
 
