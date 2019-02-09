@@ -21,6 +21,7 @@ matrix:
         - oraclejdk8
 
       before_install:
+        - export JAVA_HOME=/usr/libexec/java_home -v 1.8
         - sudo ./gradlew :core-multiplatform:packForXCode
         - gem install cocoapods
         - pod repo update --silent
