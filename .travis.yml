@@ -17,6 +17,7 @@ matrix:
 
     - language: objective-c
       osx_image: xcode10.1
+      jdk: - oraclejdk8
 
       before_install:
         - ./gradlew :core-multiplatform:packForXCode
