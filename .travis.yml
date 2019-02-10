@@ -1,28 +1,4 @@
-language: android
-osx_image: xcode10.1
-android:
-  components:
-    - tools
-    - platform-tools
-    - build-tools-28.0.3
-    - android-28
-    - extra-android-support
-    - extra-google-m2repository
-    - extra-android-m2repository
-
-before_install:
-  - gem install cocoapods
-  - pod repo update --silent
-  - gem install xcpretty
-
-install:
-  - cd iosApp
-  - pod install
+language: java
 
 script:
-  - ./gradlew ktlint connectedcheck
-  - swiftlint
-  - set -o pipefail && xcodebuild -workspace iosApp.xcworkspace -scheme 'iosApp' -destination 'platform=iOS Simulator,name=iPhone 6s Plus' build test CODE_SIGN_IDENTITY=- | xcpretty -c
-
-
-
+       - ./gradlew :core-multiplatform:build
