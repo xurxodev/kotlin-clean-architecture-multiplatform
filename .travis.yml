@@ -10,7 +10,7 @@ before_install:
   - gem install xcpretty
 
 install:
-  - iosApp/pod install
+  - /iosApp/pod install
 
 script:
   - ./gradlew :core-multiplatform:build --configure-on-demand
