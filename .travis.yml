@@ -7,4 +7,4 @@ jdk:
 
 script:
   - export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
-  - ./gradlew :core-multiplatform:build --configure-on-demand
+  - ./gradlew :core-multiplatform:build --configure-on-demand --info
