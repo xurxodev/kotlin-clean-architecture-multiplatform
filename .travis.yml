@@ -5,5 +5,8 @@ install: true
 jdk:
   - oraclejdk8
 
+before_install:
+  - brew upgrade gradle
+
 script:
   - ./gradlew :core-multiplatform:build --configure-on-demand
