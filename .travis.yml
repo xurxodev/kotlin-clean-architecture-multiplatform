@@ -1,4 +1,4 @@
-language: objective-c
+language: java
 osx_image: xcode10.1
 install: true
 
@@ -6,4 +6,4 @@ jdk:
   - oraclejdk8
 
 script:
-  - ./gradlew :core-multiplatform:build --configure-on-demand --stacktrace
+  - ./gradlew :core-multiplatform:build --configure-on-demand
