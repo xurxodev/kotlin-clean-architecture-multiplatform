@@ -1,6 +1,9 @@
 os: osx
 osx_image: xcode10.1
-language: java
+language: android
+
+jdk:
+  - oraclejdk8
 
 script:
   - export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
