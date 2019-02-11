@@ -1,8 +1,18 @@
 os: osx
-osx_image: xcode10.1
+osx_image: xcode9.3
 language: android
 
+jdk:
+  - oraclejdk8
+
 script:
-  - export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
   - ./gradlew :core-multiplatform:build --configure-on-demand
 
+before_cache:
+  - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
+  - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
+
+cache:
+  directories:
+    - $HOME/.gradle/caches/
+    - $HOME/.gradle/wrapper/
