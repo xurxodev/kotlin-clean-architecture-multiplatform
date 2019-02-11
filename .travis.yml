@@ -1,4 +1,4 @@
 language: java
 
 script:
-       - ./gradlew :core-multiplatform:build --configure-on-demand
+  - ./gradlew :core-multiplatform:build --configure-on-demand
