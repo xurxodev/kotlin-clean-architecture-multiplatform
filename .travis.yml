@@ -1,5 +1,6 @@
-language: java
+os: osx
 osx_image: xcode10.1
+language: java
 install: true
 
 jdk:
