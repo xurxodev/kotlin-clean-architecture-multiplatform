@@ -5,9 +5,5 @@ install: true
 jdk:
   - oraclejdk8
 
-before_install:
-  - brew tap caskroom/cask
-  - brew cask install android-sdk
-
 script:
-  - ./gradlew :core-multiplatform:build --configure-on-demand --info
+  - ./gradlew :core-multiplatform:build --configure-on-demand --stacktrace
