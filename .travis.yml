@@ -2,9 +2,6 @@ os: osx
 osx_image: xcode10.1
 language: android
 
-jdk:
-  - oraclejdk8
-
 script:
   - export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
   - ./gradlew :core-multiplatform:build --configure-on-demand
