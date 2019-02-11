@@ -5,8 +5,18 @@ language: android
 jdk:
   - oraclejdk8
 
+before_install:
+  - pod repo update --silent
+  - gem install xcpretty
+
+install:
+  - iosApp/pod install
+
 script:
   - ./gradlew :core-multiplatform:build --configure-on-demand
+  - cd iosApp
+  - swiftlint
+  - set -o pipefail && xcodebuild -workspace iosApp.xcworkspace -scheme 'iosApp' -destination 'platform=iOS Simulator,name=iPhone 6s Plus' build test CODE_SIGN_IDENTITY=- | xcpretty -c
 
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
