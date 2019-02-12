@@ -24,6 +24,9 @@ script:
   - swiftlint
   - set -o pipefail && xcodebuild -workspace iosApp.xcworkspace -scheme 'iosApp' -destination 'platform=iOS Simulator,name=iPhone 6s Plus' build test CODE_SIGN_IDENTITY=- | xcpretty -c
 
+after_failure:
+  - cat MSBuild_*.failure.txt
+  
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
   - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
