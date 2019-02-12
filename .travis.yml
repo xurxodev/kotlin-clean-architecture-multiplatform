@@ -19,6 +19,7 @@
     - cd build
     - cd xcode-frameworks
     - ls
+    - pwd
     - cd ..
     - cd ..
     - cd ..
