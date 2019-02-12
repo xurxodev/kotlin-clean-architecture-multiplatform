@@ -17,6 +17,7 @@
     - ./gradlew :core-multiplatform:build --configure-on-demand
     - cd core-multiplatform
     - cd build
+    - cd xcode-frameworks
     - ls
     - cd ..
     - cd ..
