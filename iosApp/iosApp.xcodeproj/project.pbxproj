@@ -253,6 +253,7 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/../core-multiplatform/build/xcode-frameworks",
 			);
 			outputFileListPaths = (
 			);
@@ -260,7 +261,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "pwd\ncd \"$SRCROOT/../core-multiplatform/build/xcode-frameworks\"\n./gradlew :core-multiplatform:packForXCode -PXCODE_CONFIGURATION=${CONFIGURATION}\n";
+			shellScript = "cd \"$SRCROOT/../core-multiplatform/build/xcode-frameworks\"\n./gradlew :core-multiplatform:packForXCode -PXCODE_CONFIGURATION=${CONFIGURATION}\n";
 		};
 		1572A412220868D7006BFFB1 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
