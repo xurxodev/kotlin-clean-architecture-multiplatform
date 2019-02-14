@@ -1,6 +1,6 @@
   os: osx
   osx_image: xcode10.1
-  language: android
+  language: objective-c
 
   before_install:
     - pod repo update --silent
@@ -15,14 +15,6 @@
 
   script:
     - ./gradlew :core-multiplatform:build --configure-on-demand
-    - cd core-multiplatform
-    - cd build
-    - cd xcode-frameworks
-    - ls
-    - pwd
-    - cd ..
-    - cd ..
-    - cd ..
     - cd iosApp
     - swiftlint
     - set -o pipefail && xcodebuild -workspace iosApp.xcworkspace -scheme 'iosApp' -destination 'platform=iOS Simulator,name=iPhone 6s Plus' build test CODE_SIGN_IDENTITY=- | xcpretty -c
