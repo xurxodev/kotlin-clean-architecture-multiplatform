@@ -13,7 +13,6 @@
 		156CC3B9219F226000D0EA4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 156CC3B7219F226000D0EA4F /* Main.storyboard */; };
 		156CC3BB219F226100D0EA4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 156CC3BA219F226100D0EA4F /* Assets.xcassets */; };
 		156CC3BE219F226100D0EA4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 156CC3BC219F226100D0EA4F /* LaunchScreen.storyboard */; };
-		1572A4112208641A006BFFB1 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 1572A41022086419006BFFB1 /* Podfile */; };
 		15EE422A21DA485A0057F001 /* core_multiplatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15EE422921DA485A0057F001 /* core_multiplatform.framework */; };
 		15EE422B21DA485A0057F001 /* core_multiplatform.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 15EE422921DA485A0057F001 /* core_multiplatform.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8E059E9765AF5530EC5641B5 /* Pods_iosApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 297671EB9846F78A869FD988 /* Pods_iosApp.framework */; };
@@ -55,7 +54,7 @@
 		156CC3BA219F226100D0EA4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		156CC3BD219F226100D0EA4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		156CC3BF219F226100D0EA4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1572A41022086419006BFFB1 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		15CE696E22159D7400B70A45 /* packForXCode.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = packForXCode.sh; sourceTree = "<group>"; };
 		15EE422921DA485A0057F001 /* core_multiplatform.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = core_multiplatform.framework; path = "../core-multiplatform/build/xcode-frameworks/core_multiplatform.framework"; sourceTree = "<group>"; };
 		297671EB9846F78A869FD988 /* Pods_iosApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		971D3799195B3CEECAD6DD9C /* Pods-iosApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-iosApp/Pods-iosApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -93,7 +92,6 @@
 		156CC3A7219F226000D0EA4F = {
 			isa = PBXGroup;
 			children = (
-				1572A41022086419006BFFB1 /* Podfile */,
 				15EE422921DA485A0057F001 /* core_multiplatform.framework */,
 				156CC3B2219F226000D0EA4F /* iosApp */,
 				151248AD220C65F4006107D0 /* iosAppTests */,
@@ -115,6 +113,7 @@
 		156CC3B2219F226000D0EA4F /* iosApp */ = {
 			isa = PBXGroup;
 			children = (
+				15CE696D22159D2E00B70A45 /* Scripts */,
 				156CC3B3219F226000D0EA4F /* AppDelegate.swift */,
 				156CC3B5219F226000D0EA4F /* ViewController.swift */,
 				156CC3B7219F226000D0EA4F /* Main.storyboard */,
@@ -123,6 +122,14 @@
 				156CC3BF219F226100D0EA4F /* Info.plist */,
 			);
 			path = iosApp;
+			sourceTree = "<group>";
+		};
+		15CE696D22159D2E00B70A45 /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				15CE696E22159D7400B70A45 /* packForXCode.sh */,
+			);
+			path = Scripts;
 			sourceTree = "<group>";
 		};
 		1C48044C75DB4F18B69DAD79 /* Frameworks */ = {
@@ -168,7 +175,6 @@
 			buildConfigurationList = 156CC3C2219F226100D0EA4F /* Build configuration list for PBXNativeTarget "iosApp" */;
 			buildPhases = (
 				5C92884E26FA0E5AFA483185 /* [CP] Check Pods Manifest.lock */,
-				156294CD219F562900B453BC /* ShellScript */,
 				156CC3AC219F226000D0EA4F /* Sources */,
 				156CC3AD219F226000D0EA4F /* Frameworks */,
 				156CC3AE219F226000D0EA4F /* Resources */,
@@ -237,7 +243,6 @@
 			files = (
 				156CC3BE219F226100D0EA4F /* LaunchScreen.storyboard in Resources */,
 				156CC3BB219F226100D0EA4F /* Assets.xcassets in Resources */,
-				1572A4112208641A006BFFB1 /* Podfile in Resources */,
 				156CC3B9219F226000D0EA4F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -245,24 +250,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		156294CD219F562900B453BC /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/../core-multiplatform/build/xcode-frameworks",
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "cd \"$SRCROOT/../core-multiplatform/build/xcode-frameworks\"\n./gradlew :core-multiplatform:packForXCode -PXCODE_CONFIGURATION=${CONFIGURATION}\n";
-		};
 		1572A412220868D7006BFFB1 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
