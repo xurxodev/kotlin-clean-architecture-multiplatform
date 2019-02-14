@@ -1,6 +1,5 @@
 ![](http://xurxodev.com/content/images/2017/04/xurxodev-readme.png) 
-# kotlin-clean-architecture-multiplatform
-Kotlin Clean Architecture Multiplatform example
+# Kotlin Clean Architecture Multiplatform [![Build Status](https://travis-ci.org/xurxodev/kotlin-clean-architecture-multiplatform.svg?branch=master)](https://travis-ci.org/xurxodev/kotlin-clean-architecture-multiplatform/)
 
 This example shows how to create a Android app and iOS app using Kotlin multiplatform and Clean Architecture.
 
