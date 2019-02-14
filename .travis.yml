@@ -6,6 +6,7 @@
     - pod repo update --silent
     - gem install xcpretty
     - brew cask install homebrew/cask-versions/java8
+    - export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 
   install:
     - cd iosApp
@@ -18,7 +19,6 @@
     - swiftlint
     - set -o pipefail && xcodebuild -workspace iosApp.xcworkspace -scheme 'iosApp' -destination 'platform=iOS Simulator,name=iPhone 6s Plus' build test CODE_SIGN_IDENTITY=- | xcpretty -c
 
-
   before_cache:
     - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
     - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
@@ -30,6 +30,3 @@
 
   after_failure:
     - cat xcodebuild.log
-    - cat -n $TMPDIR/com.apple.dt.XCTest-status/Session*.log
-    - cat -n ~/Library/Logs/DiagnosticReports/xctest*.crash
-    - sleep 5
