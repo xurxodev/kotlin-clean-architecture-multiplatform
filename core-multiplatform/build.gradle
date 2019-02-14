@@ -65,9 +65,8 @@ task packForXCode(type: Sync) {
             setExecutable(true)
         }
     }
-
-    tasks.build.dependsOn packForXCode
 }
 
 tasks.build.dependsOn packForXCode
+
 check.dependsOn ktlint
