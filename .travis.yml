@@ -6,7 +6,6 @@
     - pod repo update --silent
     - gem install xcpretty
     - brew cask install homebrew/cask-versions/java8
-    - export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
 
   install:
     - cd iosApp
