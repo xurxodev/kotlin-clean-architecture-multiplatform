@@ -54,7 +54,6 @@
 		156CC3BA219F226100D0EA4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		156CC3BD219F226100D0EA4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		156CC3BF219F226100D0EA4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		15CE696E22159D7400B70A45 /* packForXCode.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = packForXCode.sh; sourceTree = "<group>"; };
 		15EE422921DA485A0057F001 /* core_multiplatform.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = core_multiplatform.framework; path = "../core-multiplatform/build/xcode-frameworks/core_multiplatform.framework"; sourceTree = "<group>"; };
 		297671EB9846F78A869FD988 /* Pods_iosApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iosApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		971D3799195B3CEECAD6DD9C /* Pods-iosApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iosApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-iosApp/Pods-iosApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -113,7 +112,6 @@
 		156CC3B2219F226000D0EA4F /* iosApp */ = {
 			isa = PBXGroup;
 			children = (
-				15CE696D22159D2E00B70A45 /* Scripts */,
 				156CC3B3219F226000D0EA4F /* AppDelegate.swift */,
 				156CC3B5219F226000D0EA4F /* ViewController.swift */,
 				156CC3B7219F226000D0EA4F /* Main.storyboard */,
@@ -122,14 +120,6 @@
 				156CC3BF219F226100D0EA4F /* Info.plist */,
 			);
 			path = iosApp;
-			sourceTree = "<group>";
-		};
-		15CE696D22159D2E00B70A45 /* Scripts */ = {
-			isa = PBXGroup;
-			children = (
-				15CE696E22159D7400B70A45 /* packForXCode.sh */,
-			);
-			path = Scripts;
 			sourceTree = "<group>";
 		};
 		1C48044C75DB4F18B69DAD79 /* Frameworks */ = {
@@ -180,6 +170,7 @@
 				156CC3AE219F226000D0EA4F /* Resources */,
 				15EE422C21DA485A0057F001 /* Embed Frameworks */,
 				1572A412220868D7006BFFB1 /* ShellScript */,
+				15CE696F2215E36900B70A45 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -266,6 +257,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n";
+		};
+		15CE696F2215E36900B70A45 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "cd \"$SRCROOT/../\"\n./gradlew :core-multiplatform:packForXCode \n";
 		};
 		5C92884E26FA0E5AFA483185 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
