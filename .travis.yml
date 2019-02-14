@@ -14,7 +14,6 @@
     - cd ..
 
   script:
-    - ./gradlew :core-multiplatform:build --configure-on-demand
     - cd iosApp
     - swiftlint
     - set -o pipefail && xcodebuild -workspace iosApp.xcworkspace -scheme 'iosApp' -destination 'platform=iOS Simulator,name=iPhone 6s Plus' build test CODE_SIGN_IDENTITY=- | xcpretty -c
