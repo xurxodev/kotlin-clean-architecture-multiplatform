@@ -2,14 +2,14 @@ package com.xurxodev.multiplatformexample.android
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.xurxodev.multiplatformexample.android.dummy.DummyContent
 import kotlinx.android.synthetic.main.fragment_product_list.view.*
 
-class ProductListFragment : Fragment() {
+class ProductListFragment : androidx.fragment.app.Fragment() {
 
     private var twoPane: Boolean = false
     private lateinit var rootView: View
@@ -25,7 +25,8 @@ class ProductListFragment : Fragment() {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 

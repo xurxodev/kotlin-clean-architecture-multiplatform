@@ -5,8 +5,8 @@ import com.xurxodev.multiplatformexample.core.product.model.boundaries.ProductRe
 import com.xurxodev.multiplatformexample.core.product.model.entities.Product
 import com.xurxodev.multiplatformexample.core.product.model.error.ProductError
 
-class GetProductUseCase(private val productRepository: ProductRepository){
-    fun execute (id: Int) : Either<ProductError, Product> {
+class GetProductUseCase(private val productRepository: ProductRepository) {
+    fun execute(id: Int): Either<ProductError, Product> {
         return productRepository.getProductById(id)
     }
 }

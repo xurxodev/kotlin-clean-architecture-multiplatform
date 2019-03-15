@@ -1,10 +1,10 @@
 package com.xurxodev.multiplatformexample.core.common
 
 sealed class Either<out L, out R> {
-    //Failure
+    // Failure
     data class Left<out L>(val value: L) : Either<L, Nothing>()
 
-    //Success
+    // Success
     data class Right<out R>(val value: R) : Either<Nothing, R>()
 
     val isRight get() = this is Right<R>
@@ -16,7 +16,7 @@ sealed class Either<out L, out R> {
 
 fun <L, R, T> Either<L, R>.fold(left: (L) -> T, right: (R) -> T): T =
     when (this) {
-        is Either.Left  -> left(value)
+        is Either.Left -> left(value)
         is Either.Right -> right(value)
     }
 fun <L, R, T> Either<L, R>.flatMap(f: (R) -> Either<L, T>): Either<L, T> =

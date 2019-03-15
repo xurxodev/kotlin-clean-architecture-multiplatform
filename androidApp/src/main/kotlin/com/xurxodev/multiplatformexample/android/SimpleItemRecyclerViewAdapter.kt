@@ -1,6 +1,5 @@
 package com.xurxodev.multiplatformexample.android
 
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,8 +8,9 @@ import com.xurxodev.multiplatformexample.android.dummy.DummyContent
 import kotlinx.android.synthetic.main.item_product_list.view.*
 
 class SimpleItemRecyclerViewAdapter(
-    val listener: (View) -> Unit) :
-    RecyclerView.Adapter<SimpleItemRecyclerViewAdapter.ViewHolder>() {
+    val listener: (View) -> Unit
+) :
+    androidx.recyclerview.widget.RecyclerView.Adapter<SimpleItemRecyclerViewAdapter.ViewHolder>() {
 
     var values: MutableList<DummyContent.DummyItem> = mutableListOf()
 
@@ -27,7 +27,7 @@ class SimpleItemRecyclerViewAdapter(
 
         with(holder.itemView) {
             tag = item
-            setOnClickListener{ v ->
+            setOnClickListener { v ->
                 listener(v)
             }
         }
@@ -35,7 +35,7 @@ class SimpleItemRecyclerViewAdapter(
 
     override fun getItemCount() = values.size
 
-    inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+    inner class ViewHolder(view: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(view) {
         val idView: TextView = view.id_text
         val contentView: TextView = view.content
     }

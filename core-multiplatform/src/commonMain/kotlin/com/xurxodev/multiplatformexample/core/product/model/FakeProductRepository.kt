@@ -8,7 +8,7 @@ import com.xurxodev.multiplatformexample.core.product.model.entities.Product
 import com.xurxodev.multiplatformexample.core.product.model.error.ProductError
 import com.xurxodev.multiplatformexample.core.product.model.error.ProductsError
 
-class FakeProductRepository(): ProductRepository {
+class FakeProductRepository() : ProductRepository {
     private val products = mutableListOf<Product>()
 
     init {
@@ -97,7 +97,7 @@ class FakeProductRepository(): ProductRepository {
     override fun getProductById(id: Int): Either<ProductError, Product> {
         val product = products.firstOrNull { it.id == id }
 
-        return if (product == null){
+        return if (product == null) {
             Either.Left(ProductError.ProductNotFound)
         } else {
             Either.Right(product)
