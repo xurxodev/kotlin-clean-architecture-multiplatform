@@ -6,6 +6,9 @@ This example shows how to create a Android app and iOS app using Kotlin multipla
 This sample based on the [multiplatform documentation](http://kotlinlang.org/docs/reference/multiplatform.html).
 If you have questions about the structure or how it works take a look at the documentation there.
 
+## Clean Architecture Course
+
+* [Curso Clean Architecture](https://xurxodev.com/curso-clean-architecture)
 
 ## iOS
 
